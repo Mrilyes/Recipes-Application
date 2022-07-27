@@ -21,7 +21,7 @@ export const loadRecipe = async function (id) {
       sourceUrl: recipe.source_url,
       ingredients: recipe.ingredients,
     };
-    console.log(state.recipe);
+    // console.log(state.recipe);
   } catch (err) {
     console.error(`${err.message} 💥💥💥`);
   }

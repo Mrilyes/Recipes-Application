@@ -30,6 +30,14 @@ class RecipeView {
     this.#insertAdjacentHTML('afterbegin', markup);
   };
 
+  addHandlerRender(handler) {
+    // shortpath
+    ['hashchange', 'load'].forEach(e => window.addEventListener(e, handler));
+    // hardway
+    // window.addEventListener('hashchange', handler);
+    // window.addEventListener('load', handler);
+  }
+
   #generateMarkup() {
     return `
     <figure class="recipe__fig">

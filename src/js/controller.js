@@ -33,11 +33,12 @@ const ControlRecipes = async function () {
     // 2nd method
     // const recipeView = new RecipeView(model.state.recipe);
   } catch (err) {
-    alert(err.message);
+    console.log(err.message);
   }
 };
 
-// shortpath
-['hashchange', 'load'].forEach(e => window.addEventListener(e, ControlRecipes));
-// window.addEventListener('hashchange', showRecipe);
-// window.addEventListener('load', showRecipe);
+const init = function () {
+  recipeView.addHandlerRender(ControlRecipes);
+};
+
+init();
