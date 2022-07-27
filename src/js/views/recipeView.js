@@ -4,6 +4,8 @@ import icons from '../../img/icons.svg'; // parcel v1
 class RecipeView {
   #parentElement = document.querySelector('.recipe');
   #data;
+  #errorMessage =
+    'We could not find this recipe 🚨 .' + ' Please try another one 😄 !';
   render(data) {
     this.#data = data;
     const markup = this.#generateMarkup();
@@ -29,6 +31,20 @@ class RecipeView {
     this.#clear();
     this.#insertAdjacentHTML('afterbegin', markup);
   };
+
+  renderError(message = this.#errorMessage) {
+    const markup = `<div class="error">
+            <div>
+              <svg>
+                <use href="${icons}#icon-alert-triangle"></use>
+              </svg>
+            </div>
+            <p>${message}</p>
+          </div>`;
+
+    this.#clear();
+    this.#insertAdjacentHTML('afterbegin', markup);
+  }
 
   addHandlerRender(handler) {
     // shortpath
