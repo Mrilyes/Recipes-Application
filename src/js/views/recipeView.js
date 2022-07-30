@@ -1,5 +1,6 @@
 import icons from '../../img/icons.svg'; // parcel v1
 // import icons from 'url:../img/icons.svg'; // parcel v2
+// import { fraction } from 'fractional';
 
 class RecipeView {
   #parentElement = document.querySelector('.recipe');
@@ -168,5 +169,4 @@ class RecipeView {
     `;
   }
 }
-
 export default new RecipeView();
